@@ -1,0 +1,23 @@
+package com.stripepayment.stripepayment.service;
+
+
+import com.stripepayment.stripepayment.entity.Order;
+import com.stripepayment.stripepayment.repository.OrderRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class OrderService {
+    private final OrderRepository orderRepository;
+
+    @Autowired
+    public OrderService(OrderRepository orderRepository) {
+        this.orderRepository = orderRepository;
+    }
+
+    public Order saveOrder(Order order) {
+        // Add any additional logic or database interactions here
+        return orderRepository.save(order);
+    }
+}
+
